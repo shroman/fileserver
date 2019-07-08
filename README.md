@@ -29,8 +29,13 @@ Unknown command
 >> index
 file_list_here
 ...
+>> get a
+ERROR
+No file found
 >> get ../59857.txt
 OK: writing to /tmp/59857.txt
 >> q
 Good bye
 ```
+
+To see how the server can handle multiple clients, see <code>org.example.files.client.handler.MultiClientTest</code>
