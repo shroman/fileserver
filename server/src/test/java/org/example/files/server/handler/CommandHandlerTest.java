@@ -55,13 +55,13 @@ class CommandHandlerTest {
     @Test
     public void testUnknown() {
         ch.writeInbound(Unpooled.copiedBuffer("aaa", CharsetUtil.UTF_8));
-        assertEquals("0+Unknown command: NOOP\r\n\r\n", ((ByteBuf) ch.readOutbound()).toString(CharsetUtil.UTF_8));
+        assertEquals("0+Unknown command\r\n\r\n", ((ByteBuf) ch.readOutbound()).toString(CharsetUtil.UTF_8));
     }
 
     @Test
     public void testEmpty() {
         ch.writeInbound(Unpooled.copiedBuffer("", CharsetUtil.UTF_8));
-        assertEquals("0+Unknown command: NOOP\r\n\r\n", ((ByteBuf) ch.readOutbound()).toString(CharsetUtil.UTF_8));
+        assertEquals("0+Unknown command\r\n\r\n", ((ByteBuf) ch.readOutbound()).toString(CharsetUtil.UTF_8));
     }
 
     @Test

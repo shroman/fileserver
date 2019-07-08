@@ -24,11 +24,13 @@ $cd client
 $mvn clean package -DskipTests
 $mvn exec:java -Dexec.mainClass="org.example.files.client.CommandLine" -Dexec.args="-d /tmp -h localhost -p 49999"
 
+>> a
+Unknown command
 >> index
-
+file_list_here
+...
 >> get ../59857.txt
 OK: writing to /tmp/59857.txt
-
 >> q
 Good bye
 ```

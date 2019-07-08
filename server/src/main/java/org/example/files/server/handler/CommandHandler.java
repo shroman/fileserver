@@ -33,7 +33,7 @@ public final class CommandHandler extends ChannelInboundHandlerAdapter {
                     break;
                 case NOOP:
                 default:
-                    ctx.writeAndFlush(toCmd("Unknown command: " + req.getCmd()));
+                    ctx.writeAndFlush(toCmd("Unknown command"));
             }
         } finally {
             ReferenceCountUtil.release(msg);
