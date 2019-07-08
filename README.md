@@ -14,13 +14,14 @@ $mvn clean install -N
 
 # go to the server directory
 $cd server
-$mvn clean install
+$mvn clean install -DskipTests
 $mvn exec:java -Dexec.mainClass="org.example.files.server.FileServer" -Dexec.args="../"
 ```
 
 Run the client in a different console
 ```bash
 $cd client
+$mvn clean package -DskipTests
 $mvn exec:java -Dexec.mainClass="org.example.files.client.CommandLine" -Dexec.args="-d /tmp -h localhost -p 49999"
 
 >> index
