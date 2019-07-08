@@ -18,6 +18,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * Accessing a server with multiple clients.
  */
@@ -108,6 +110,13 @@ public class MultiClientTest {
         }
 
         executor.shutdown();
-        executor.awaitTermination(30, TimeUnit.SECONDS);
+        executor.awaitTermination(20, TimeUnit.SECONDS);
+
+        // check file integrity.
+        for (Path file : files) {
+            Path fName = file.getFileName();
+
+            assertEquals(Files.size(file), Files.size(Paths.get("/tmp/" + fName)));
+        }
     }
 }
