@@ -27,4 +27,7 @@ $mvn exec:java -Dexec.mainClass="org.example.files.client.CommandLine" -Dexec.ar
 
 >> get ../59857.txt
 OK: writing to /tmp/59857.txt
+
+>> q
+Good bye
 ```
