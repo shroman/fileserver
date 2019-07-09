@@ -42,7 +42,7 @@ public final class FileServer {
     public void start(String[] args) throws Exception {
         File fileDir = checkCreateFileDir(args);
 
-        // TODO: if linux, switch toCmd epoll
+        // TODO: if linux, switch to epoll
         try {
             ServerBootstrap srvBootstrap = new ServerBootstrap();
             srvBootstrap.group(bossGrp, evLoopGrp)

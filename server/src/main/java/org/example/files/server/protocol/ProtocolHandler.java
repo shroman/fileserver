@@ -53,7 +53,6 @@ public class ProtocolHandler {
         } else if (splitReq[0].equalsIgnoreCase(Command.QUIT.name()) || splitReq[0].equalsIgnoreCase(Command.Q.name())) {
             return new ClientRequest(Command.QUIT);
         } else if (splitReq[0].equalsIgnoreCase(Command.GET.name())) {
-            // limitation: file name cannot be space-delimited.
             if (splitReq.length < 2) {
                 logger.severe("No file name specified");
 

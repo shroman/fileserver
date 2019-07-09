@@ -87,8 +87,6 @@ public class CommandLine {
                     }
                 }).whenComplete((res, ex) -> cl.shutdown());
 
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> shutdown()));
-
         System.out.println("*** Available commands: ***");
         System.out.println("- index");
         System.out.println("- get [file_name]");
@@ -106,11 +104,6 @@ public class CommandLine {
                 e.printStackTrace();
                 cl.shutdown();
             }
-
-//            if (input.trim().equalsIgnoreCase("quit") || input.trim().equalsIgnoreCase("q")) {
-//                Thread.currentThread().sleep(1000);
-//                cl.shutdown();
-//            }
         }
     }
 }

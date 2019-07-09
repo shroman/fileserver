@@ -53,8 +53,6 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
             } else {
                 // next chunk
                 msg.resetReaderIndex();
-//                throw new Exception("Bad protocol");
-                // TODO; no protection from server sending bad protocol responses.
             }
         }
 
